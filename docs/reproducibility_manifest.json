@@ -1,0 +1,174 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "project_name": "Phantom AI 3.0",
+  "project_release": "v3.0.0-final",
+  "manifest_generation_timestamp": "2026-11-02T19:00:00Z",
+  "software_environment": {
+    "reference_os": "macOS 15.0 / Ubuntu 22.04 LTS",
+    "python_runtime": "3.13.7",
+    "nodejs_runtime": "v25.9.0 (compatible with Node 20 LTS+)",
+    "mongodb_runtime": "8.2.7 (compatible with MongoDB 7.0+)",
+    "core_python_dependencies": {
+      "torch": "2.15.0",
+      "fastapi": "0.162.0",
+      "pydantic": "2.14.2",
+      "uvicorn": "0.34.0",
+      "numpy": "2.5.4",
+      "pillow": "13.0.0",
+      "scikit-learn": "1.6.1"
+    },
+    "core_node_dependencies": {
+      "@simplewebauthn/server": "13.1.1",
+      "@simplewebauthn/browser": "13.1.0",
+      "express": "4.21.2",
+      "mongoose": "8.10.1",
+      "jsonwebtoken": "9.0.2",
+      "react": "19.0.0",
+      "vite": "6.1.0"
+    }
+  },
+  "frozen_model_checkpoints": {
+    "generator": {
+      "filename": "cgan_generator_phase54.pt",
+      "relative_path": "phantom-ai-ml/checkpoints/cgan_generator_phase54.pt",
+      "architecture": "ConditionalWGANGPGenerator",
+      "trainable_parameters": 4102336,
+      "total_tensors": 4104260,
+      "parameter_count_notes": "4,102,336 trainable parameters; 4,104,260 total state_dict elements including 1,924 BatchNorm running statistics",
+      "sha256": "a1714389d0d1eddad10fae74a736ca41de5e230eada095e6868e5daeeb2a1964",
+      "output_resolution": [64, 64, 3],
+      "conditioning_dimension": 40,
+      "latent_dimension": 100
+    },
+    "evaluator": {
+      "filename": "forensic_evaluator_split_b.pt",
+      "relative_path": "phantom-ai-ml/checkpoints/forensic_evaluator_split_b.pt",
+      "architecture": "ForensicFeatureCNN",
+      "trainable_parameters": 4824020,
+      "total_tensors": 4828381,
+      "parameter_count_notes": "4,824,020 trainable parameters; 4,828,381 total state_dict elements including 4,361 BatchNorm running statistics",
+      "sha256": "f52ae5a8df4ae574432f353fd77fc605f6dcf758d67d492b447c139a79e78834",
+      "target_attributes_count": 20
+    },
+    "nlp_labeler": {
+      "filename": "nlp_char_bilstm_phase3c2.pt",
+      "relative_path": "phantom-ai-ml/checkpoints/nlp_char_bilstm_phase3c2.pt",
+      "architecture": "CharAwareBiLSTMAttributeLabeler",
+      "trainable_parameters": 2599864,
+      "sha256": "2d567c79d759e76940968fadb02d412b530d3405e377a2d6454c64e9f2e7b4a3",
+      "bio_tags_count": 21
+    },
+    "critic": {
+      "filename": "cgan_critic_phase54.pt",
+      "relative_path": "phantom-ai-ml/checkpoints/cgan_critic_phase54.pt",
+      "architecture": "ProjectionCritic",
+      "sha256": "b0e26457bdbbe07a2a2b037ba1b1c0223d1d4289da6104a060648aa47dfd63cb"
+    },
+    "latent_directions": {
+      "filename": "latent_directions_phase57.pt",
+      "relative_path": "phantom-ai-ml/checkpoints/latent_directions_phase57.pt",
+      "sha256": "e6c78a444d664ec8f49e73eba6eed32b4a376f0456f50376956ed6ef12ff766c",
+      "accepted_directions_count": 5,
+      "rejected_directions_count": 15
+    }
+  },
+  "dataset_partitions": {
+    "total_images": 202599,
+    "total_identities": 10177,
+    "split_a_generative": {
+      "total_identities": 8126,
+      "total_images": 161780,
+      "train_identities_a1": 6500,
+      "train_images_a1": 130063,
+      "val_identities_a2": 1626,
+      "val_images_a2": 31717
+    },
+    "split_b_evaluator": {
+      "total_identities": 980,
+      "total_images": 19313,
+      "train_identities_b1": 791,
+      "train_images_b1": 15521,
+      "val_identities_b2": 189,
+      "val_images_b2": 3792
+    },
+    "split_c_benchmark": {
+      "total_identities": 1071,
+      "total_images": 21506
+    }
+  },
+  "training_hyperparameters": {
+    "generator_and_critic": {
+      "optimizer": "Adam",
+      "generator_lr": 0.0001,
+      "critic_lr": 0.0001,
+      "adam_betas": [0.0, 0.9],
+      "batch_size": 64,
+      "epochs": 25,
+      "gradient_penalty_weight": 10.0,
+      "mode_seeking_weight": 1.0,
+      "ttur_critic_steps_per_gen_step": 5
+    },
+    "forensic_evaluator": {
+      "optimizer": "Adam",
+      "learning_rate": 0.0003,
+      "batch_size": 64,
+      "epochs": 10,
+      "best_epoch": 8
+    },
+    "nlp_bilstm_crf": {
+      "optimizer": "Adam",
+      "learning_rate": 0.001,
+      "batch_size": 32,
+      "word_embed_dim": 100,
+      "char_embed_dim": 30,
+      "char_cnn_filters": 50,
+      "lstm_hidden_dim": 128,
+      "lstm_layers": 2
+    }
+  },
+  "canonical_evaluation_metrics": {
+    "split_c_generative_benchmark": {
+      "custom_frechet_distance": 203.8529,
+      "forensic_attribute_verification_macro_f1": 0.3562,
+      "forensic_attribute_verification_micro_f1": 0.4954,
+      "forensic_attribute_verification_accuracy": 0.7360,
+      "mean_pairwise_ms_ssim": 0.3425,
+      "diversity_index": 0.6575
+    },
+    "split_b2_evaluator_validation": {
+      "macro_f1": 0.5141,
+      "micro_f1": 0.5877,
+      "accuracy": 0.7784,
+      "mean_auroc": 0.8533
+    },
+    "nlp_phase37_independent_evaluation": {
+      "strict_span_precision": 0.6292,
+      "strict_span_recall": 0.5600,
+      "strict_span_f1": 0.5926,
+      "expected_calibration_error": 0.4865,
+      "maximum_calibration_error": 0.7812
+    }
+  },
+  "accepted_latent_directions": [
+    { "attribute": "hair_blond", "selectivity_ratio": 1.34 },
+    { "attribute": "hair_gray", "selectivity_ratio": 1.41 },
+    { "attribute": "hair_bangs", "selectivity_ratio": 2.16 },
+    { "attribute": "facial_goatee", "selectivity_ratio": 1.23 },
+    { "attribute": "glasses", "selectivity_ratio": 1.36 }
+  ],
+  "verification_test_suites": {
+    "jest_backend_tests": 84,
+    "python_ml_tests": 116,
+    "browser_workflow_acceptance_steps": 8,
+    "negative_security_scenarios": 18,
+    "accounting_notes": "Counts represent four distinct, non-overlapping verification categories: 84 Jest gateway/security tests, 116 Python ML unit/integration tests, 8 live browser journey steps, and 18 negative security attack test cases."
+  },
+  "forensic_integrity_specifications": {
+    "image_blob_hashing": "SHA-256",
+    "report_manifest_hashing": "SHA-256",
+    "authentication_standard": "FIDO2 / WebAuthn Level 2",
+    "session_transport": "HTTP-Only SameSite=Strict Cookie / Bearer JWT",
+    "disclaimer": "Investigative approximation only. Non-biometric lead aid. Prohibited from automated facial recognition input or direct courtroom proof of guilt."
+  }
+}
+

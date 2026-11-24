@@ -1,0 +1,1938 @@
+{
+  "benchmark_phase": "Phase 3.7",
+  "timestamp": "2026-11-01 21:09:45 UTC",
+  "checkpoints": {
+    "nlp": {
+      "path": "phantom-ai-ml/checkpoints/nlp_char_bilstm_phase3c2.pt",
+      "exists": true,
+      "expected_sha256": "2d567c79d759e76940968fadb02d412b530d3405e377a2d6454c64e9f2e7b4a3",
+      "actual_sha256": "2d567c79d759e76940968fadb02d412b530d3405e377a2d6454c64e9f2e7b4a3",
+      "valid": true
+    },
+    "generator": {
+      "path": "phantom-ai-ml/checkpoints/cgan_generator_phase54.pt",
+      "exists": true,
+      "expected_sha256": "a1714389d0d1eddad10fae74a736ca41de5e230eada095e6868e5daeeb2a1964",
+      "actual_sha256": "a1714389d0d1eddad10fae74a736ca41de5e230eada095e6868e5daeeb2a1964",
+      "valid": true
+    },
+    "evaluator": {
+      "path": "phantom-ai-ml/checkpoints/forensic_evaluator_split_b.pt",
+      "exists": true,
+      "expected_sha256": "f52ae5a8df4ae574432f353fd77fc605f6dcf758d67d492b447c139a79e78834",
+      "actual_sha256": "f52ae5a8df4ae574432f353fd77fc605f6dcf758d67d492b447c139a79e78834",
+      "valid": true
+    }
+  },
+  "development_set_evaluation": {
+    "corpus_name": "Phase 3.6 Development Set",
+    "sample_count": 60,
+    "total_slots": 600,
+    "token_metrics": {
+      "token_precision": 0.5191256830601093,
+      "token_recall": 0.36538461538461536,
+      "token_f1": 0.4288939051918736,
+      "gold_tokens": 260,
+      "pred_tokens": 183,
+      "correct_tokens": 95
+    },
+    "raw_model_spans": {
+      "precision": 0.4492753623188406,
+      "recall": 0.36470588235294116,
+      "f1": 0.40259740259740256,
+      "gold_spans": 85,
+      "pred_spans": 69,
+      "exact_matches": 31
+    },
+    "hybrid_pipeline_spans": {
+      "precision": 0.8636363636363636,
+      "recall": 0.8941176470588236,
+      "f1": 0.8786127167630058,
+      "gold_spans": 85,
+      "pred_spans": 88,
+      "exact_matches": 76,
+      "boundary_mismatches_count": 8,
+      "false_positives_count": 4,
+      "false_negatives_count": 1
+    },
+    "state_accuracy": 0.9883333333333333,
+    "state_performance": {
+      "explicit": {
+        "gold": 51,
+        "pred": 57,
+        "correct": 51,
+        "precision": 0.8947368421052632,
+        "recall": 1.0,
+        "f1": 0.9444444444444444
+      },
+      "negated": {
+        "gold": 19,
+        "pred": 18,
+        "correct": 18,
+        "precision": 1.0,
+        "recall": 0.9473684210526315,
+        "f1": 0.972972972972973
+      },
+      "uncertain": {
+        "gold": 6,
+        "pred": 5,
+        "correct": 5,
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "f1": 0.9090909090909091
+      },
+      "contradictory": {
+        "gold": 3,
+        "pred": 3,
+        "correct": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "unknown": {
+        "gold": 521,
+        "pred": 517,
+        "correct": 516,
+        "precision": 0.9980657640232108,
+        "recall": 0.9904030710172744,
+        "f1": 0.9942196531791907
+      }
+    },
+    "confusion_matrix": {
+      "explicit": {
+        "explicit": 51,
+        "negated": 0,
+        "uncertain": 0,
+        "contradictory": 0,
+        "unknown": 0
+      },
+      "negated": {
+        "explicit": 0,
+        "negated": 18,
+        "uncertain": 0,
+        "contradictory": 0,
+        "unknown": 1
+      },
+      "uncertain": {
+        "explicit": 1,
+        "negated": 0,
+        "uncertain": 5,
+        "contradictory": 0,
+        "unknown": 0
+      },
+      "contradictory": {
+        "explicit": 0,
+        "negated": 0,
+        "uncertain": 0,
+        "contradictory": 3,
+        "unknown": 0
+      },
+      "unknown": {
+        "explicit": 5,
+        "negated": 0,
+        "uncertain": 0,
+        "contradictory": 0,
+        "unknown": 516
+      }
+    },
+    "provenance_distribution": {
+      "nlp_model": 57,
+      "system_default": 509,
+      "pattern_fallback": 5,
+      "negation_safety_rule": 18,
+      "explicit_unknown_rule": 8,
+      "contradiction_safety_engine": 3
+    },
+    "category_metrics": {
+      "face_shape": {
+        "gold_spans": 7,
+        "pred_spans": 8,
+        "exact_matches": 5,
+        "state_correct": 59,
+        "total_slots": 60
+      },
+      "hair": {
+        "gold_spans": 11,
+        "pred_spans": 11,
+        "exact_matches": 11,
+        "state_correct": 60,
+        "total_slots": 60
+      },
+      "facial_hair": {
+        "gold_spans": 16,
+        "pred_spans": 18,
+        "exact_matches": 13,
+        "state_correct": 57,
+        "total_slots": 60
+      },
+      "eyes": {
+        "gold_spans": 17,
+        "pred_spans": 17,
+        "exact_matches": 17,
+        "state_correct": 59,
+        "total_slots": 60
+      },
+      "hairline": {
+        "gold_spans": 3,
+        "pred_spans": 3,
+        "exact_matches": 2,
+        "state_correct": 60,
+        "total_slots": 60
+      },
+      "eyebrows": {
+        "gold_spans": 3,
+        "pred_spans": 3,
+        "exact_matches": 3,
+        "state_correct": 60,
+        "total_slots": 60
+      },
+      "nose": {
+        "gold_spans": 6,
+        "pred_spans": 6,
+        "exact_matches": 6,
+        "state_correct": 60,
+        "total_slots": 60
+      },
+      "lips": {
+        "gold_spans": 3,
+        "pred_spans": 3,
+        "exact_matches": 3,
+        "state_correct": 60,
+        "total_slots": 60
+      },
+      "distinguishing_marks": {
+        "gold_spans": 11,
+        "pred_spans": 10,
+        "exact_matches": 8,
+        "state_correct": 59,
+        "total_slots": 60
+      },
+      "other_observable": {
+        "gold_spans": 8,
+        "pred_spans": 9,
+        "exact_matches": 8,
+        "state_correct": 59,
+        "total_slots": 60
+      }
+    },
+    "subset_metrics": {
+      "span_calibration": {
+        "samples": 12,
+        "slots": 120,
+        "state_correct": 119,
+        "gold_spans": 14,
+        "pred_spans": 15,
+        "exact_matches": 14
+      },
+      "compound_descriptors": {
+        "samples": 12,
+        "slots": 120,
+        "state_correct": 120,
+        "gold_spans": 19,
+        "pred_spans": 19,
+        "exact_matches": 18
+      },
+      "category_boundary": {
+        "samples": 12,
+        "slots": 120,
+        "state_correct": 117,
+        "gold_spans": 17,
+        "pred_spans": 19,
+        "exact_matches": 14
+      },
+      "unseen_lexical": {
+        "samples": 12,
+        "slots": 120,
+        "state_correct": 117,
+        "gold_spans": 12,
+        "pred_spans": 12,
+        "exact_matches": 11
+      },
+      "complex_forensic_cases": {
+        "samples": 12,
+        "slots": 120,
+        "state_correct": 120,
+        "gold_spans": 23,
+        "pred_spans": 23,
+        "exact_matches": 19
+      }
+    },
+    "calibration": {
+      "token_emission_calibration": {
+        "ece": 0.2013611192299989,
+        "brier_score": 0.22247867523171994,
+        "sample_count": 651,
+        "bins": [
+          {
+            "bin_range": "[0.0, 0.1]",
+            "count": 102,
+            "avg_confidence": 0.012571792478910555,
+            "empirical_accuracy": 0.43137254901960786,
+            "calibration_gap": 0.4188007565406973
+          },
+          {
+            "bin_range": "[0.1, 0.2]",
+            "count": 10,
+            "avg_confidence": 0.15106711834669112,
+            "empirical_accuracy": 0.1,
+            "calibration_gap": 0.051067118346691115
+          },
+          {
+            "bin_range": "[0.2, 0.3]",
+            "count": 9,
+            "avg_confidence": 0.25268369416395825,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.25268369416395825
+          },
+          {
+            "bin_range": "[0.3, 0.4]",
+            "count": 7,
+            "avg_confidence": 0.3455395655972617,
+            "empirical_accuracy": 0.2857142857142857,
+            "calibration_gap": 0.05982527988297598
+          },
+          {
+            "bin_range": "[0.4, 0.5]",
+            "count": 13,
+            "avg_confidence": 0.46381213114811826,
+            "empirical_accuracy": 0.3076923076923077,
+            "calibration_gap": 0.15611982345581055
+          },
+          {
+            "bin_range": "[0.5, 0.6]",
+            "count": 9,
+            "avg_confidence": 0.5556997060775757,
+            "empirical_accuracy": 0.4444444444444444,
+            "calibration_gap": 0.11125526163313126
+          },
+          {
+            "bin_range": "[0.6, 0.7]",
+            "count": 14,
+            "avg_confidence": 0.652035368340356,
+            "empirical_accuracy": 0.42857142857142855,
+            "calibration_gap": 0.22346393976892748
+          },
+          {
+            "bin_range": "[0.7, 0.8]",
+            "count": 36,
+            "avg_confidence": 0.7548343473010592,
+            "empirical_accuracy": 0.4722222222222222,
+            "calibration_gap": 0.28261212507883704
+          },
+          {
+            "bin_range": "[0.8, 0.9]",
+            "count": 62,
+            "avg_confidence": 0.8618607895989572,
+            "empirical_accuracy": 0.6774193548387096,
+            "calibration_gap": 0.18444143476024755
+          },
+          {
+            "bin_range": "[0.9, 1.0]",
+            "count": 389,
+            "avg_confidence": 0.983023276059364,
+            "empirical_accuracy": 0.8354755784061697,
+            "calibration_gap": 0.1475476976531943
+          }
+        ]
+      },
+      "crf_sequence_calibration": {
+        "ece": 0.5602309430638949,
+        "brier_score": 0.45645478143245416,
+        "sample_count": 60,
+        "bins": [
+          {
+            "bin_range": "[0.0, 0.1]",
+            "count": 0,
+            "avg_confidence": 0.0,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.0
+          },
+          {
+            "bin_range": "[0.1, 0.2]",
+            "count": 1,
+            "avg_confidence": 0.14400161802768707,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.14400161802768707
+          },
+          {
+            "bin_range": "[0.2, 0.3]",
+            "count": 3,
+            "avg_confidence": 0.2724580615758896,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.2724580615758896
+          },
+          {
+            "bin_range": "[0.3, 0.4]",
+            "count": 4,
+            "avg_confidence": 0.35468678176403046,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.35468678176403046
+          },
+          {
+            "bin_range": "[0.4, 0.5]",
+            "count": 2,
+            "avg_confidence": 0.43857842683792114,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.43857842683792114
+          },
+          {
+            "bin_range": "[0.5, 0.6]",
+            "count": 7,
+            "avg_confidence": 0.5345556565693447,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.5345556565693447
+          },
+          {
+            "bin_range": "[0.6, 0.7]",
+            "count": 7,
+            "avg_confidence": 0.6671229941504342,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.6671229941504342
+          },
+          {
+            "bin_range": "[0.7, 0.8]",
+            "count": 2,
+            "avg_confidence": 0.7577634751796722,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.7577634751796722
+          },
+          {
+            "bin_range": "[0.8, 0.9]",
+            "count": 10,
+            "avg_confidence": 0.8584046006202698,
+            "empirical_accuracy": 0.3,
+            "calibration_gap": 0.5584046006202699
+          },
+          {
+            "bin_range": "[0.9, 1.0]",
+            "count": 24,
+            "avg_confidence": 0.951885553697745,
+            "empirical_accuracy": 0.3333333333333333,
+            "calibration_gap": 0.6185522203644116
+          }
+        ]
+      }
+    },
+    "error_details": {
+      "boundary_mismatches": [
+        {
+          "id": "COM-06",
+          "subset": "compound_descriptors",
+          "category": "facial_hair",
+          "gold": [
+            "full beard",
+            21,
+            31
+          ],
+          "pred": [
+            "full beard and mustache",
+            21,
+            44
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CAT-08",
+          "subset": "category_boundary",
+          "category": "facial_hair",
+          "gold": [
+            "couldn't see if he had any facial hair",
+            34,
+            72
+          ],
+          "pred": [
+            "facial hair",
+            61,
+            72
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CAT-09",
+          "subset": "category_boundary",
+          "category": "face_shape",
+          "gold": [
+            "oval",
+            13,
+            17
+          ],
+          "pred": [
+            "face was oval",
+            4,
+            17
+          ],
+          "prov": "pattern_fallback"
+        },
+        {
+          "id": "CAT-10",
+          "subset": "category_boundary",
+          "category": "distinguishing_marks",
+          "gold": [
+            "scar across his left cheek",
+            24,
+            50
+          ],
+          "pred": [
+            "prominent scar across his left cheek",
+            14,
+            50
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CMP-06",
+          "subset": "complex_forensic_cases",
+          "category": "distinguishing_marks",
+          "gold": [
+            "scar across his cheek",
+            19,
+            40
+          ],
+          "pred": [
+            "prominent scar across his cheek",
+            9,
+            40
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CMP-07",
+          "subset": "complex_forensic_cases",
+          "category": "facial_hair",
+          "gold": [
+            "no beard",
+            12,
+            20
+          ],
+          "pred": [
+            "had no beard",
+            8,
+            20
+          ],
+          "prov": "negation_safety_rule"
+        },
+        {
+          "id": "CMP-08",
+          "subset": "complex_forensic_cases",
+          "category": "hairline",
+          "gold": [
+            "receding",
+            17,
+            25
+          ],
+          "pred": [
+            "hairline",
+            4,
+            12
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CMP-11",
+          "subset": "complex_forensic_cases",
+          "category": "face_shape",
+          "gold": [
+            "square jaw",
+            18,
+            28
+          ],
+          "pred": [
+            "chiseled square jaw",
+            9,
+            28
+          ],
+          "prov": "nlp_model"
+        }
+      ],
+      "false_positives": [
+        {
+          "id": "CAL-09",
+          "subset": "span_calibration",
+          "category": "facial_hair",
+          "gold_state": "unknown",
+          "pred_span": "bushy eyebrows",
+          "offsets": [
+            11,
+            25
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CAT-05",
+          "subset": "category_boundary",
+          "category": "face_shape",
+          "gold_state": "unknown",
+          "pred_span": "heavy backpack",
+          "offsets": [
+            58,
+            72
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CAT-12",
+          "subset": "category_boundary",
+          "category": "facial_hair",
+          "gold_state": "unknown",
+          "pred_span": "nose",
+          "offsets": [
+            45,
+            49
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "LEX-10",
+          "subset": "unseen_lexical",
+          "category": "other_observable",
+          "gold_state": "unknown",
+          "pred_span": "noticeable birthmarks",
+          "offsets": [
+            28,
+            49
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        }
+      ],
+      "false_negatives": [
+        {
+          "id": "LEX-10",
+          "subset": "unseen_lexical",
+          "category": "distinguishing_marks",
+          "gold_span": "free of any noticeable birthmarks",
+          "offsets": [
+            16,
+            49
+          ],
+          "gold_state": "negated",
+          "pred_state": "unknown"
+        }
+      ]
+    }
+  },
+  "independent_test_set_evaluation": {
+    "corpus_name": "Phase 3.7 Generalization Test Set",
+    "sample_count": 70,
+    "total_slots": 700,
+    "token_metrics": {
+      "token_precision": 0.2981132075471698,
+      "token_recall": 0.3674418604651163,
+      "token_f1": 0.3291666666666666,
+      "gold_tokens": 215,
+      "pred_tokens": 265,
+      "correct_tokens": 79
+    },
+    "raw_model_spans": {
+      "precision": 0.25301204819277107,
+      "recall": 0.2876712328767123,
+      "f1": 0.2692307692307692,
+      "gold_spans": 73,
+      "pred_spans": 83,
+      "exact_matches": 21
+    },
+    "hybrid_pipeline_spans": {
+      "precision": 0.3902439024390244,
+      "recall": 0.4383561643835616,
+      "f1": 0.4129032258064516,
+      "gold_spans": 73,
+      "pred_spans": 82,
+      "exact_matches": 32,
+      "boundary_mismatches_count": 26,
+      "false_positives_count": 24,
+      "false_negatives_count": 15
+    },
+    "state_accuracy": 0.9371428571428572,
+    "state_performance": {
+      "explicit": {
+        "gold": 49,
+        "pred": 73,
+        "correct": 42,
+        "precision": 0.5753424657534246,
+        "recall": 0.8571428571428571,
+        "f1": 0.6885245901639344
+      },
+      "negated": {
+        "gold": 12,
+        "pred": 6,
+        "correct": 6,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666
+      },
+      "uncertain": {
+        "gold": 5,
+        "pred": 3,
+        "correct": 2,
+        "precision": 0.6666666666666666,
+        "recall": 0.4,
+        "f1": 0.5
+      },
+      "contradictory": {
+        "gold": 10,
+        "pred": 13,
+        "correct": 10,
+        "precision": 0.7692307692307693,
+        "recall": 1.0,
+        "f1": 0.8695652173913044
+      },
+      "unknown": {
+        "gold": 624,
+        "pred": 605,
+        "correct": 596,
+        "precision": 0.9851239669421488,
+        "recall": 0.9551282051282052,
+        "f1": 0.9698942229454841
+      }
+    },
+    "confusion_matrix": {
+      "explicit": {
+        "explicit": 42,
+        "negated": 0,
+        "uncertain": 0,
+        "contradictory": 2,
+        "unknown": 5
+      },
+      "negated": {
+        "explicit": 3,
+        "negated": 6,
+        "uncertain": 0,
+        "contradictory": 0,
+        "unknown": 3
+      },
+      "uncertain": {
+        "explicit": 2,
+        "negated": 0,
+        "uncertain": 2,
+        "contradictory": 0,
+        "unknown": 1
+      },
+      "contradictory": {
+        "explicit": 0,
+        "negated": 0,
+        "uncertain": 0,
+        "contradictory": 10,
+        "unknown": 0
+      },
+      "unknown": {
+        "explicit": 26,
+        "negated": 0,
+        "uncertain": 1,
+        "contradictory": 1,
+        "unknown": 596
+      }
+    },
+    "provenance_distribution": {
+      "system_default": 605,
+      "nlp_model": 67,
+      "negation_safety_rule": 6,
+      "pattern_fallback": 9,
+      "contradiction_safety_engine": 13
+    },
+    "category_metrics": {
+      "face_shape": {
+        "gold_spans": 8,
+        "pred_spans": 12,
+        "exact_matches": 2,
+        "state_correct": 61,
+        "total_slots": 70
+      },
+      "hair": {
+        "gold_spans": 12,
+        "pred_spans": 14,
+        "exact_matches": 5,
+        "state_correct": 61,
+        "total_slots": 70
+      },
+      "facial_hair": {
+        "gold_spans": 14,
+        "pred_spans": 21,
+        "exact_matches": 8,
+        "state_correct": 59,
+        "total_slots": 70
+      },
+      "eyes": {
+        "gold_spans": 9,
+        "pred_spans": 8,
+        "exact_matches": 5,
+        "state_correct": 67,
+        "total_slots": 70
+      },
+      "hairline": {
+        "gold_spans": 2,
+        "pred_spans": 2,
+        "exact_matches": 1,
+        "state_correct": 70,
+        "total_slots": 70
+      },
+      "eyebrows": {
+        "gold_spans": 5,
+        "pred_spans": 4,
+        "exact_matches": 3,
+        "state_correct": 69,
+        "total_slots": 70
+      },
+      "nose": {
+        "gold_spans": 4,
+        "pred_spans": 4,
+        "exact_matches": 2,
+        "state_correct": 69,
+        "total_slots": 70
+      },
+      "lips": {
+        "gold_spans": 4,
+        "pred_spans": 3,
+        "exact_matches": 2,
+        "state_correct": 70,
+        "total_slots": 70
+      },
+      "distinguishing_marks": {
+        "gold_spans": 8,
+        "pred_spans": 4,
+        "exact_matches": 0,
+        "state_correct": 64,
+        "total_slots": 70
+      },
+      "other_observable": {
+        "gold_spans": 7,
+        "pred_spans": 10,
+        "exact_matches": 4,
+        "state_correct": 66,
+        "total_slots": 70
+      }
+    },
+    "subset_metrics": {
+      "natural_colloquial_statements": {
+        "samples": 10,
+        "slots": 100,
+        "state_correct": 97,
+        "gold_spans": 15,
+        "pred_spans": 16,
+        "exact_matches": 9
+      },
+      "complex_clause_structures": {
+        "samples": 10,
+        "slots": 100,
+        "state_correct": 92,
+        "gold_spans": 16,
+        "pred_spans": 19,
+        "exact_matches": 7
+      },
+      "lexical_paraphrase_diversity": {
+        "samples": 10,
+        "slots": 100,
+        "state_correct": 90,
+        "gold_spans": 12,
+        "pred_spans": 14,
+        "exact_matches": 5
+      },
+      "negation_scope_variations": {
+        "samples": 10,
+        "slots": 100,
+        "state_correct": 91,
+        "gold_spans": 12,
+        "pred_spans": 12,
+        "exact_matches": 4
+      },
+      "epistemic_uncertainty_unknowns": {
+        "samples": 10,
+        "slots": 100,
+        "state_correct": 93,
+        "gold_spans": 11,
+        "pred_spans": 8,
+        "exact_matches": 3
+      },
+      "occlusions_and_distractors": {
+        "samples": 10,
+        "slots": 100,
+        "state_correct": 93,
+        "gold_spans": 7,
+        "pred_spans": 13,
+        "exact_matches": 4
+      },
+      "multi_witness_contradictions": {
+        "samples": 10,
+        "slots": 100,
+        "state_correct": 100,
+        "gold_spans": 0,
+        "pred_spans": 0,
+        "exact_matches": 0
+      }
+    },
+    "calibration": {
+      "token_emission_calibration": {
+        "ece": 0.16694710447513877,
+        "brier_score": 0.19683428885388143,
+        "sample_count": 1036,
+        "bins": [
+          {
+            "bin_range": "[0.0, 0.1]",
+            "count": 166,
+            "avg_confidence": 0.01434261657254043,
+            "empirical_accuracy": 0.3795180722891566,
+            "calibration_gap": 0.3651754557166162
+          },
+          {
+            "bin_range": "[0.1, 0.2]",
+            "count": 41,
+            "avg_confidence": 0.1451812849902525,
+            "empirical_accuracy": 0.5609756097560976,
+            "calibration_gap": 0.4157943247658451
+          },
+          {
+            "bin_range": "[0.2, 0.3]",
+            "count": 18,
+            "avg_confidence": 0.2332030079431004,
+            "empirical_accuracy": 0.6111111111111112,
+            "calibration_gap": 0.37790810316801077
+          },
+          {
+            "bin_range": "[0.3, 0.4]",
+            "count": 23,
+            "avg_confidence": 0.34973456678183185,
+            "empirical_accuracy": 0.5217391304347826,
+            "calibration_gap": 0.17200456365295075
+          },
+          {
+            "bin_range": "[0.4, 0.5]",
+            "count": 26,
+            "avg_confidence": 0.4580627358876742,
+            "empirical_accuracy": 0.6923076923076923,
+            "calibration_gap": 0.23424495642001808
+          },
+          {
+            "bin_range": "[0.5, 0.6]",
+            "count": 31,
+            "avg_confidence": 0.5520521210085961,
+            "empirical_accuracy": 0.6451612903225806,
+            "calibration_gap": 0.0931091693139845
+          },
+          {
+            "bin_range": "[0.6, 0.7]",
+            "count": 39,
+            "avg_confidence": 0.6541654085501646,
+            "empirical_accuracy": 0.6153846153846154,
+            "calibration_gap": 0.038780793165549166
+          },
+          {
+            "bin_range": "[0.7, 0.8]",
+            "count": 49,
+            "avg_confidence": 0.7562957576342991,
+            "empirical_accuracy": 0.4897959183673469,
+            "calibration_gap": 0.2664998392669522
+          },
+          {
+            "bin_range": "[0.8, 0.9]",
+            "count": 90,
+            "avg_confidence": 0.8558407266934712,
+            "empirical_accuracy": 0.6333333333333333,
+            "calibration_gap": 0.22250739336013792
+          },
+          {
+            "bin_range": "[0.9, 1.0]",
+            "count": 553,
+            "avg_confidence": 0.9836504428123695,
+            "empirical_accuracy": 0.9095840867992767,
+            "calibration_gap": 0.07406635601309275
+          }
+        ]
+      },
+      "crf_sequence_calibration": {
+        "ece": 0.4865309950762562,
+        "brier_score": 0.36170277529910394,
+        "sample_count": 70,
+        "bins": [
+          {
+            "bin_range": "[0.0, 0.1]",
+            "count": 4,
+            "avg_confidence": 0.06077782856300473,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.06077782856300473
+          },
+          {
+            "bin_range": "[0.1, 0.2]",
+            "count": 4,
+            "avg_confidence": 0.12947173975408077,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.12947173975408077
+          },
+          {
+            "bin_range": "[0.2, 0.3]",
+            "count": 5,
+            "avg_confidence": 0.23253732025623322,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.23253732025623322
+          },
+          {
+            "bin_range": "[0.3, 0.4]",
+            "count": 6,
+            "avg_confidence": 0.37970731655756634,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.37970731655756634
+          },
+          {
+            "bin_range": "[0.4, 0.5]",
+            "count": 6,
+            "avg_confidence": 0.43558844923973083,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.43558844923973083
+          },
+          {
+            "bin_range": "[0.5, 0.6]",
+            "count": 6,
+            "avg_confidence": 0.5703000624974569,
+            "empirical_accuracy": 0.0,
+            "calibration_gap": 0.5703000624974569
+          },
+          {
+            "bin_range": "[0.6, 0.7]",
+            "count": 13,
+            "avg_confidence": 0.6471116176018348,
+            "empirical_accuracy": 0.07692307692307693,
+            "calibration_gap": 0.5701885406787579
+          },
+          {
+            "bin_range": "[0.7, 0.8]",
+            "count": 4,
+            "avg_confidence": 0.7407726794481277,
+            "empirical_accuracy": 0.5,
+            "calibration_gap": 0.24077267944812775
+          },
+          {
+            "bin_range": "[0.8, 0.9]",
+            "count": 7,
+            "avg_confidence": 0.860532420022147,
+            "empirical_accuracy": 0.14285714285714285,
+            "calibration_gap": 0.7176752771650041
+          },
+          {
+            "bin_range": "[0.9, 1.0]",
+            "count": 15,
+            "avg_confidence": 0.9613760749499003,
+            "empirical_accuracy": 0.26666666666666666,
+            "calibration_gap": 0.6947094082832337
+          }
+        ]
+      }
+    },
+    "error_details": {
+      "boundary_mismatches": [
+        {
+          "id": "NAT-04",
+          "subset": "natural_colloquial_statements",
+          "category": "hair",
+          "gold": [
+            "bald",
+            24,
+            28
+          ],
+          "pred": [
+            "of hair",
+            50,
+            57
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "NAT-06",
+          "subset": "natural_colloquial_statements",
+          "category": "lips",
+          "gold": [
+            "thin lips",
+            43,
+            52
+          ],
+          "pred": [
+            "very thin lips",
+            38,
+            52
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "NAT-07",
+          "subset": "natural_colloquial_statements",
+          "category": "other_observable",
+          "gold": [
+            "wire-rim glasses",
+            52,
+            68
+          ],
+          "pred": [
+            "deep forehead wrinkles",
+            25,
+            47
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "NAT-08",
+          "subset": "natural_colloquial_statements",
+          "category": "distinguishing_marks",
+          "gold": [
+            "tattoo on his neck",
+            20,
+            38
+          ],
+          "pred": [
+            "noticeable tattoo on his neck",
+            9,
+            38
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "NAT-10",
+          "subset": "natural_colloquial_statements",
+          "category": "nose",
+          "gold": [
+            "crooked nose",
+            41,
+            53
+          ],
+          "pred": [
+            "prominent crooked nose",
+            31,
+            53
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CLS-01",
+          "subset": "complex_clause_structures",
+          "category": "face_shape",
+          "gold": [
+            "narrow and angular",
+            58,
+            76
+          ],
+          "pred": [
+            "'s face",
+            38,
+            45
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CLS-03",
+          "subset": "complex_clause_structures",
+          "category": "hairline",
+          "gold": [
+            "receding hairline",
+            43,
+            60
+          ],
+          "pred": [
+            "pronounced receding hairline",
+            32,
+            60
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CLS-05",
+          "subset": "complex_clause_structures",
+          "category": "eyebrows",
+          "gold": [
+            "bushy eyebrows",
+            80,
+            94
+          ],
+          "pred": [
+            "remarkably bushy eyebrows",
+            69,
+            94
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CLS-07",
+          "subset": "complex_clause_structures",
+          "category": "eyes",
+          "gold": [
+            "impossible to ascertain his eye color",
+            7,
+            44
+          ],
+          "pred": [
+            "eye color",
+            35,
+            44
+          ],
+          "prov": "pattern_fallback"
+        },
+        {
+          "id": "CLS-09",
+          "subset": "complex_clause_structures",
+          "category": "face_shape",
+          "gold": [
+            "oval",
+            42,
+            46
+          ],
+          "pred": [
+            "strikingly oval",
+            31,
+            46
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CLS-09",
+          "subset": "complex_clause_structures",
+          "category": "distinguishing_marks",
+          "gold": [
+            "scar across his left eyebrow",
+            64,
+            92
+          ],
+          "pred": [
+            "diagonal scar across his left eyebrow",
+            55,
+            92
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CLS-10",
+          "subset": "complex_clause_structures",
+          "category": "facial_hair",
+          "gold": [
+            "faint stubble",
+            38,
+            51
+          ],
+          "pred": [
+            "full beard",
+            14,
+            24
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "LEX-P03",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "facial_hair",
+          "gold": [
+            "mutton chops",
+            26,
+            38
+          ],
+          "pred": [
+            "prominent mutton chops connecting down to his jawline",
+            16,
+            69
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "LEX-P07",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "hair",
+          "gold": [
+            "salt-and-pepper hair",
+            16,
+            36
+          ],
+          "pred": [
+            "salt-and-pepper hair cut very short",
+            16,
+            51
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "LEX-P08",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "eyes",
+          "gold": [
+            "emerald eyes",
+            23,
+            35
+          ],
+          "pred": [
+            "piercing emerald eyes",
+            14,
+            35
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "NEG-S03",
+          "subset": "negation_scope_variations",
+          "category": "facial_hair",
+          "gold": [
+            "lacked any mustache or beard",
+            12,
+            40
+          ],
+          "pred": [
+            "lacked any mustache",
+            12,
+            31
+          ],
+          "prov": "negation_safety_rule"
+        },
+        {
+          "id": "NEG-S04",
+          "subset": "negation_scope_variations",
+          "category": "hair",
+          "gold": [
+            "buzz cut",
+            62,
+            70
+          ],
+          "pred": [
+            "close buzz cut",
+            56,
+            70
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "NEG-S05",
+          "subset": "negation_scope_variations",
+          "category": "distinguishing_marks",
+          "gold": [
+            "no trace of any scar, tattoo, or piercing",
+            21,
+            62
+          ],
+          "pred": [
+            "piercing on his face",
+            54,
+            74
+          ],
+          "prov": "pattern_fallback"
+        },
+        {
+          "id": "NEG-S07",
+          "subset": "negation_scope_variations",
+          "category": "facial_hair",
+          "gold": [
+            "no noticeable facial hair",
+            22,
+            47
+          ],
+          "pred": [
+            "noticeable facial hair",
+            25,
+            47
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "NEG-S09",
+          "subset": "negation_scope_variations",
+          "category": "facial_hair",
+          "gold": [
+            "without any observable facial hair",
+            19,
+            53
+          ],
+          "pred": [
+            "facial hair",
+            42,
+            53
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "UNC-S05",
+          "subset": "epistemic_uncertainty_unknowns",
+          "category": "nose",
+          "gold": [
+            "pointed",
+            25,
+            32
+          ],
+          "pred": [
+            "nose seemed somewhat pointed",
+            4,
+            32
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "UNC-S07",
+          "subset": "epistemic_uncertainty_unknowns",
+          "category": "hair",
+          "gold": [
+            "dark brown",
+            25,
+            35
+          ],
+          "pred": [
+            "been dark brown",
+            20,
+            35
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "UNC-S10",
+          "subset": "epistemic_uncertainty_unknowns",
+          "category": "other_observable",
+          "gold": [
+            "unable to determine if the suspect wore earrings",
+            16,
+            64
+          ],
+          "pred": [
+            " earrings",
+            55,
+            64
+          ],
+          "prov": "pattern_fallback"
+        },
+        {
+          "id": "OCC-02",
+          "subset": "occlusions_and_distractors",
+          "category": "eyes",
+          "gold": [
+            "blocked his eyes from view",
+            51,
+            77
+          ],
+          "pred": [
+            "blocked his eyes from",
+            51,
+            72
+          ],
+          "prov": "nlp_model"
+        },
+        {
+          "id": "OCC-02",
+          "subset": "occlusions_and_distractors",
+          "category": "other_observable",
+          "gold": [
+            "sunglasses",
+            27,
+            37
+          ],
+          "pred": [
+            "glasses",
+            30,
+            37
+          ],
+          "prov": "pattern_fallback"
+        },
+        {
+          "id": "OCC-10",
+          "subset": "occlusions_and_distractors",
+          "category": "face_shape",
+          "gold": [
+            "round jaw",
+            55,
+            64
+          ],
+          "pred": [
+            "broad round jaw",
+            49,
+            64
+          ],
+          "prov": "nlp_model"
+        }
+      ],
+      "false_positives": [
+        {
+          "id": "NAT-03",
+          "subset": "natural_colloquial_statements",
+          "category": "face_shape",
+          "gold_state": "unknown",
+          "pred_span": "cheeks and chin",
+          "offsets": [
+            53,
+            68
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "NAT-06",
+          "subset": "natural_colloquial_statements",
+          "category": "other_observable",
+          "gold_state": "unknown",
+          "pred_span": "prominent high cheekbones",
+          "offsets": [
+            8,
+            33
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CLS-01",
+          "subset": "complex_clause_structures",
+          "category": "facial_hair",
+          "gold_state": "unknown",
+          "pred_span": "angular",
+          "offsets": [
+            69,
+            76
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CLS-01",
+          "subset": "complex_clause_structures",
+          "category": "distinguishing_marks",
+          "gold_state": "unknown",
+          "pred_span": "long dark curls",
+          "offsets": [
+            10,
+            25
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CLS-04",
+          "subset": "complex_clause_structures",
+          "category": "face_shape",
+          "gold_state": "unknown",
+          "pred_span": "broken previously",
+          "offsets": [
+            49,
+            66
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CLS-07",
+          "subset": "complex_clause_structures",
+          "category": "facial_hair",
+          "gold_state": "unknown",
+          "pred_span": "heavy glare reflecting",
+          "offsets": [
+            56,
+            78
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "CLS-10",
+          "subset": "complex_clause_structures",
+          "category": "face_shape",
+          "gold_state": "unknown",
+          "pred_span": "lower jaw",
+          "offsets": [
+            70,
+            79
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "LEX-P01",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "facial_hair",
+          "gold_state": "unknown",
+          "pred_span": "flowing dark tresses reaching down",
+          "offsets": [
+            7,
+            41
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "LEX-P04",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "face_shape",
+          "gold_state": "unknown",
+          "pred_span": "neck and jaw",
+          "offsets": [
+            57,
+            69
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "LEX-P05",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "face_shape",
+          "gold_state": "unknown",
+          "pred_span": "pronounced dorsal hump",
+          "offsets": [
+            40,
+            62
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "LEX-P06",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "other_observable",
+          "gold_state": "unknown",
+          "pred_span": "cleft chin",
+          "offsets": [
+            18,
+            28
+          ],
+          "pred_state": "explicit",
+          "prov": "pattern_fallback"
+        },
+        {
+          "id": "LEX-P09",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "hair",
+          "gold_state": "unknown",
+          "pred_span": "forehead",
+          "offsets": [
+            57,
+            65
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "LEX-P09",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "facial_hair",
+          "gold_state": "unknown",
+          "pred_span": "pronounced unibrow spanning straight across",
+          "offsets": [
+            9,
+            52
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "NEG-S05",
+          "subset": "negation_scope_variations",
+          "category": "face_shape",
+          "gold_state": "unknown",
+          "pred_span": "piercing on his face",
+          "offsets": [
+            54,
+            74
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "NEG-S05",
+          "subset": "negation_scope_variations",
+          "category": "hair",
+          "gold_state": "unknown",
+          "pred_span": "scar",
+          "offsets": [
+            37,
+            41
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "NEG-S05",
+          "subset": "negation_scope_variations",
+          "category": "facial_hair",
+          "gold_state": "unknown",
+          "pred_span": "tattoo",
+          "offsets": [
+            43,
+            49
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "UNC-S02",
+          "subset": "epistemic_uncertainty_unknowns",
+          "category": "other_observable",
+          "gold_state": "unknown",
+          "pred_span": "deep shadow",
+          "offsets": [
+            58,
+            69
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "UNC-S09",
+          "subset": "epistemic_uncertainty_unknowns",
+          "category": "facial_hair",
+          "gold_state": "unknown",
+          "pred_span": "eyebrows",
+          "offsets": [
+            75,
+            83
+          ],
+          "pred_state": "uncertain",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "OCC-01",
+          "subset": "occlusions_and_distractors",
+          "category": "hair",
+          "gold_state": "unknown",
+          "pred_span": "black",
+          "offsets": [
+            19,
+            24
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "OCC-03",
+          "subset": "occlusions_and_distractors",
+          "category": "face_shape",
+          "gold_state": "unknown",
+          "pred_span": "lower face",
+          "offsets": [
+            60,
+            70
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "OCC-03",
+          "subset": "occlusions_and_distractors",
+          "category": "hair",
+          "gold_state": "unknown",
+          "pred_span": "neck",
+          "offsets": [
+            44,
+            48
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "OCC-04",
+          "subset": "occlusions_and_distractors",
+          "category": "facial_hair",
+          "gold_state": "unknown",
+          "pred_span": "way down",
+          "offsets": [
+            74,
+            82
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "OCC-07",
+          "subset": "occlusions_and_distractors",
+          "category": "facial_hair",
+          "gold_state": "unknown",
+          "pred_span": "mouth",
+          "offsets": [
+            54,
+            59
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        },
+        {
+          "id": "OCC-09",
+          "subset": "occlusions_and_distractors",
+          "category": "hair",
+          "gold_state": "unknown",
+          "pred_span": "silver",
+          "offsets": [
+            42,
+            48
+          ],
+          "pred_state": "explicit",
+          "prov": "nlp_model"
+        }
+      ],
+      "false_negatives": [
+        {
+          "id": "NAT-06",
+          "subset": "natural_colloquial_statements",
+          "category": "face_shape",
+          "gold_span": "high cheekbones",
+          "offsets": [
+            18,
+            33
+          ],
+          "gold_state": "explicit",
+          "pred_state": "unknown"
+        },
+        {
+          "id": "CLS-01",
+          "subset": "complex_clause_structures",
+          "category": "hair",
+          "gold_span": "long dark curls",
+          "offsets": [
+            10,
+            25
+          ],
+          "gold_state": "explicit",
+          "pred_state": "unknown"
+        },
+        {
+          "id": "CLS-06",
+          "subset": "complex_clause_structures",
+          "category": "distinguishing_marks",
+          "gold_span": "Neither scars nor tattoos",
+          "offsets": [
+            0,
+            25
+          ],
+          "gold_state": "negated",
+          "pred_state": "unknown"
+        },
+        {
+          "id": "LEX-P01",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "hair",
+          "gold_span": "flowing dark tresses",
+          "offsets": [
+            7,
+            27
+          ],
+          "gold_state": "explicit",
+          "pred_state": "unknown"
+        },
+        {
+          "id": "LEX-P04",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "distinguishing_marks",
+          "gold_span": "ink across the right side of his neck",
+          "offsets": [
+            24,
+            61
+          ],
+          "gold_state": "explicit",
+          "pred_state": "unknown"
+        },
+        {
+          "id": "LEX-P06",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "face_shape",
+          "gold_span": "cleft chin",
+          "offsets": [
+            18,
+            28
+          ],
+          "gold_state": "explicit",
+          "pred_state": "unknown"
+        },
+        {
+          "id": "LEX-P10",
+          "subset": "lexical_paraphrase_diversity",
+          "category": "distinguishing_marks",
+          "gold_span": "devoid of blemishes, marks, or scars",
+          "offsets": [
+            22,
+            58
+          ],
+          "gold_state": "negated",
+          "pred_state": "unknown"
+        },
+        {
+          "id": "NEG-S06",
+          "subset": "negation_scope_variations",
+          "category": "eyes",
+          "gold_span": "dark brown eyes",
+          "offsets": [
+            43,
+            58
+          ],
+          "gold_state": "explicit",
+          "pred_state": "contradictory"
+        },
+        {
+          "id": "NEG-S08",
+          "subset": "negation_scope_variations",
+          "category": "distinguishing_marks",
+          "gold_span": "free from scars or birthmarks",
+          "offsets": [
+            31,
+            60
+          ],
+          "gold_state": "negated",
+          "pred_state": "unknown"
+        },
+        {
+          "id": "NEG-S10",
+          "subset": "negation_scope_variations",
+          "category": "hair",
+          "gold_span": "bald",
+          "offsets": [
+            62,
+            66
+          ],
+          "gold_state": "explicit",
+          "pred_state": "contradictory"
+        },
+        {
+          "id": "UNC-S02",
+          "subset": "epistemic_uncertainty_unknowns",
+          "category": "face_shape",
+          "gold_span": "face shape was completely unknown",
+          "offsets": [
+            4,
+            37
+          ],
+          "gold_state": "unknown",
+          "pred_state": "unknown"
+        },
+        {
+          "id": "UNC-S04",
+          "subset": "epistemic_uncertainty_unknowns",
+          "category": "facial_hair",
+          "gold_span": "cannot recall whether he had a mustache",
+          "offsets": [
+            2,
+            41
+          ],
+          "gold_state": "unknown",
+          "pred_state": "contradictory"
+        },
+        {
+          "id": "UNC-S06",
+          "subset": "epistemic_uncertainty_unknowns",
+          "category": "distinguishing_marks",
+          "gold_span": "impossible for me to remember",
+          "offsets": [
+            48,
+            77
+          ],
+          "gold_state": "unknown",
+          "pred_state": "unknown"
+        },
+        {
+          "id": "UNC-S08",
+          "subset": "epistemic_uncertainty_unknowns",
+          "category": "lips",
+          "gold_span": "lips were not visible",
+          "offsets": [
+            4,
+            25
+          ],
+          "gold_state": "unknown",
+          "pred_state": "unknown"
+        },
+        {
+          "id": "UNC-S09",
+          "subset": "epistemic_uncertainty_unknowns",
+          "category": "eyebrows",
+          "gold_span": "eyebrows",
+          "offsets": [
+            75,
+            83
+          ],
+          "gold_state": "uncertain",
+          "pred_state": "unknown"
+        }
+      ]
+    }
+  }
+}

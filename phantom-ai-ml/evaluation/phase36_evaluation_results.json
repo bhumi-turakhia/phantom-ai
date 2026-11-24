@@ -1,0 +1,354 @@
+{
+  "benchmark_version": "Phase 3.6",
+  "timestamp": "2026-11-01 20:51:48 UTC",
+  "checkpoint_audit": {
+    "nlp": {
+      "path": "phantom-ai-ml/checkpoints/nlp_char_bilstm_phase3c2.pt",
+      "exists": true,
+      "expected_sha256": "2d567c79d759e76940968fadb02d412b530d3405e377a2d6454c64e9f2e7b4a3",
+      "actual_sha256": "2d567c79d759e76940968fadb02d412b530d3405e377a2d6454c64e9f2e7b4a3",
+      "valid": true
+    },
+    "generator": {
+      "path": "phantom-ai-ml/checkpoints/cgan_generator_phase54.pt",
+      "exists": true,
+      "expected_sha256": "a1714389d0d1eddad10fae74a736ca41de5e230eada095e6868e5daeeb2a1964",
+      "actual_sha256": "a1714389d0d1eddad10fae74a736ca41de5e230eada095e6868e5daeeb2a1964",
+      "valid": true
+    },
+    "evaluator": {
+      "path": "phantom-ai-ml/checkpoints/forensic_evaluator_split_b.pt",
+      "exists": true,
+      "expected_sha256": "f52ae5a8df4ae574432f353fd77fc605f6dcf758d67d492b447c139a79e78834",
+      "actual_sha256": "f52ae5a8df4ae574432f353fd77fc605f6dcf758d67d492b447c139a79e78834",
+      "valid": true
+    }
+  },
+  "sample_count": 60,
+  "attribute_slots": 600,
+  "metrics": {
+    "evidence_state_accuracy": 0.9883333333333333,
+    "strict_span_precision": 0.8636363636363636,
+    "strict_span_recall": 0.8941176470588236,
+    "strict_span_f1": 0.8786127167630058,
+    "case_insensitive_span_f1": 0.8786127167630058,
+    "gold_spans_total": 85,
+    "predicted_spans_total": 88,
+    "exact_matches_total": 76
+  },
+  "state_metrics": {
+    "explicit": {
+      "gold": 51,
+      "pred": 57,
+      "correct": 51,
+      "precision": 0.8947368421052632,
+      "recall": 1.0,
+      "f1": 0.9444444444444444
+    },
+    "negated": {
+      "gold": 19,
+      "pred": 18,
+      "correct": 18,
+      "precision": 1.0,
+      "recall": 0.9473684210526315,
+      "f1": 0.972972972972973
+    },
+    "uncertain": {
+      "gold": 6,
+      "pred": 5,
+      "correct": 5,
+      "precision": 1.0,
+      "recall": 0.8333333333333334,
+      "f1": 0.9090909090909091
+    },
+    "contradictory": {
+      "gold": 3,
+      "pred": 3,
+      "correct": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "unknown": {
+      "gold": 521,
+      "pred": 517,
+      "correct": 516,
+      "precision": 0.9980657640232108,
+      "recall": 0.9904030710172744,
+      "f1": 0.9942196531791907
+    }
+  },
+  "confusion_matrix": {
+    "explicit": {
+      "explicit": 51,
+      "negated": 0,
+      "uncertain": 0,
+      "contradictory": 0,
+      "unknown": 0
+    },
+    "negated": {
+      "explicit": 0,
+      "negated": 18,
+      "uncertain": 0,
+      "contradictory": 0,
+      "unknown": 1
+    },
+    "uncertain": {
+      "explicit": 1,
+      "negated": 0,
+      "uncertain": 5,
+      "contradictory": 0,
+      "unknown": 0
+    },
+    "contradictory": {
+      "explicit": 0,
+      "negated": 0,
+      "uncertain": 0,
+      "contradictory": 3,
+      "unknown": 0
+    },
+    "unknown": {
+      "explicit": 5,
+      "negated": 0,
+      "uncertain": 0,
+      "contradictory": 0,
+      "unknown": 516
+    }
+  },
+  "provenance_distribution": {
+    "nlp_model": 57,
+    "system_default": 509,
+    "pattern_fallback": 5,
+    "negation_safety_rule": 18,
+    "explicit_unknown_rule": 8,
+    "contradiction_safety_engine": 3
+  },
+  "subset_metrics": {
+    "span_calibration": {
+      "samples": 12,
+      "slots": 120,
+      "state_correct": 119,
+      "gold_spans": 14,
+      "pred_spans": 15,
+      "exact_span_matches": 14
+    },
+    "compound_descriptors": {
+      "samples": 12,
+      "slots": 120,
+      "state_correct": 120,
+      "gold_spans": 19,
+      "pred_spans": 19,
+      "exact_span_matches": 18
+    },
+    "category_boundary": {
+      "samples": 12,
+      "slots": 120,
+      "state_correct": 117,
+      "gold_spans": 17,
+      "pred_spans": 19,
+      "exact_span_matches": 14
+    },
+    "unseen_lexical": {
+      "samples": 12,
+      "slots": 120,
+      "state_correct": 117,
+      "gold_spans": 12,
+      "pred_spans": 12,
+      "exact_span_matches": 11
+    },
+    "complex_forensic_cases": {
+      "samples": 12,
+      "slots": 120,
+      "state_correct": 120,
+      "gold_spans": 23,
+      "pred_spans": 23,
+      "exact_span_matches": 19
+    }
+  },
+  "category_metrics": {
+    "face_shape": {
+      "gold_spans": 7,
+      "pred_spans": 8,
+      "exact_span_matches": 5,
+      "state_correct": 59,
+      "total_slots": 60
+    },
+    "hair": {
+      "gold_spans": 11,
+      "pred_spans": 11,
+      "exact_span_matches": 11,
+      "state_correct": 60,
+      "total_slots": 60
+    },
+    "facial_hair": {
+      "gold_spans": 16,
+      "pred_spans": 18,
+      "exact_span_matches": 13,
+      "state_correct": 57,
+      "total_slots": 60
+    },
+    "eyes": {
+      "gold_spans": 17,
+      "pred_spans": 17,
+      "exact_span_matches": 17,
+      "state_correct": 59,
+      "total_slots": 60
+    },
+    "hairline": {
+      "gold_spans": 3,
+      "pred_spans": 3,
+      "exact_span_matches": 2,
+      "state_correct": 60,
+      "total_slots": 60
+    },
+    "eyebrows": {
+      "gold_spans": 3,
+      "pred_spans": 3,
+      "exact_span_matches": 3,
+      "state_correct": 60,
+      "total_slots": 60
+    },
+    "nose": {
+      "gold_spans": 6,
+      "pred_spans": 6,
+      "exact_span_matches": 6,
+      "state_correct": 60,
+      "total_slots": 60
+    },
+    "lips": {
+      "gold_spans": 3,
+      "pred_spans": 3,
+      "exact_span_matches": 3,
+      "state_correct": 60,
+      "total_slots": 60
+    },
+    "distinguishing_marks": {
+      "gold_spans": 11,
+      "pred_spans": 10,
+      "exact_span_matches": 8,
+      "state_correct": 59,
+      "total_slots": 60
+    },
+    "other_observable": {
+      "gold_spans": 8,
+      "pred_spans": 9,
+      "exact_span_matches": 8,
+      "state_correct": 59,
+      "total_slots": 60
+    }
+  },
+  "unseen_cases_evaluation": [
+    {
+      "case": "Case 1",
+      "text": "He lacked any visible facial hair.",
+      "target": "facial_hair",
+      "expected_state": "negated",
+      "actual_state": "negated",
+      "expected_span": "lacked any visible facial hair",
+      "actual_span": "lacked any visible facial hair",
+      "passed": true
+    },
+    {
+      "case": "Case 2",
+      "text": "I cannot recall whether he wore glasses.",
+      "target": "other_observable",
+      "expected_state": "unknown",
+      "actual_state": "unknown",
+      "expected_span": "cannot recall whether he wore glasses",
+      "actual_span": "cannot recall whether he wore glasses",
+      "passed": true
+    },
+    {
+      "case": "Case 3",
+      "text": "His eyes were clearly blue, although I am unsure about his hair.",
+      "target": "eyes",
+      "expected_state": "explicit",
+      "actual_state": "explicit",
+      "expected_span": "clearly blue",
+      "actual_span": "clearly blue",
+      "passed": true
+    },
+    {
+      "case": "Case 4",
+      "text": "There were no scars, tattoos, or piercings.",
+      "target": "distinguishing_marks",
+      "expected_state": "negated",
+      "actual_state": "negated",
+      "expected_span": "no scars, tattoos, or piercings",
+      "actual_span": "no scars, tattoos, or piercings",
+      "passed": true
+    },
+    {
+      "case": "Case 5",
+      "text": "He was not bald, but his hair was very short.",
+      "target": "hair",
+      "expected_state": "explicit",
+      "actual_state": "explicit",
+      "expected_span": "very short",
+      "actual_span": "very short",
+      "passed": true
+    }
+  ],
+  "documented_mismatches_evaluation": [
+    {
+      "id": "NEG-09",
+      "text": "He had no visible tattoos or piercings on his face.",
+      "target": "distinguishing_marks",
+      "expected_state": "negated",
+      "actual_state": "negated",
+      "expected_span": "no visible tattoos or piercings",
+      "actual_span": "no visible tattoos or piercings",
+      "passed": true
+    },
+    {
+      "id": "NEG-15",
+      "text": "He had definitely no beard and wore a dark baseball cap.",
+      "target": "facial_hair",
+      "expected_state": "negated",
+      "actual_state": "negated",
+      "expected_span": "definitely no beard",
+      "actual_span": "definitely no beard",
+      "passed": true
+    },
+    {
+      "id": "UNC-02",
+      "text": "He appears to have narrow eyes.",
+      "target": "eyes",
+      "expected_state": "uncertain",
+      "actual_state": "uncertain",
+      "expected_span": "narrow eyes",
+      "actual_span": "narrow eyes",
+      "passed": true
+    },
+    {
+      "id": "UNC-09",
+      "text": "He was sort of bald on top.",
+      "target": "hair",
+      "expected_state": "uncertain",
+      "actual_state": "uncertain",
+      "expected_span": "bald on top",
+      "actual_span": "bald on top",
+      "passed": true
+    },
+    {
+      "id": "UNC-15",
+      "text": "He definitely had blue eyes, but possibly had a trimmed beard.",
+      "target": "eyes",
+      "expected_state": "explicit",
+      "actual_state": "explicit",
+      "expected_span": "blue eyes",
+      "actual_span": "blue eyes",
+      "passed": true
+    },
+    {
+      "id": "VIG-10",
+      "text": "The suspect had blond hair and blue eyes, but the second witness noted black hair.",
+      "target": "eyes",
+      "expected_state": "explicit",
+      "actual_state": "explicit",
+      "expected_span": "blue eyes",
+      "actual_span": "blue eyes",
+      "passed": true
+    }
+  ]
+}

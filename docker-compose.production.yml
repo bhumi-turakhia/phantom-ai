@@ -1,0 +1,97 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: phantom-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-phantom_admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-change_in_production}
+      MONGO_INITDB_DATABASE: phantom-ai
+    volumes:
+      - mongo_data:/data/db
+      - mongo_config:/data/configdb
+    networks:
+      - phantom-internal
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  ml-service:
+    build:
+      context: ./phantom-ai-ml
+      dockerfile: Dockerfile
+    container_name: phantom-ml-service
+    restart: always
+    environment:
+      PHANTOM_ML_HOST: "0.0.0.0"
+      PHANTOM_ML_PORT: "8000"
+      PHANTOM_ML_CHECKPOINTS_DIR: "/app/checkpoints"
+      PHANTOM_ML_DATASETS_DIR: "/app/datasets"
+    volumes:
+      - ./checkpoints:/app/checkpoints:ro
+      - ./datasets:/app/datasets:ro
+    networks:
+      - phantom-internal
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  api:
+    build:
+      context: ./phantom-ai-api
+      dockerfile: Dockerfile
+    container_name: phantom-api
+    restart: always
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      ml-service:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 5001
+      MONGODB_URI: mongodb://${MONGO_ROOT_USER:-phantom_admin}:${MONGO_ROOT_PASSWORD:-change_in_production}@mongodb:27017/phantom-ai?authSource=admin
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRES_IN: 7d
+      CORS_ORIGIN: ${CORS_ORIGIN}
+      WEBAUTHN_ORIGIN: ${WEBAUTHN_ORIGIN}
+      WEBAUTHN_RP_ID: ${WEBAUTHN_RP_ID}
+      COOKIE_DOMAIN: ${COOKIE_DOMAIN}
+      ML_SERVICE_URL: http://ml-service:8000
+      ML_SERVICE_TIMEOUT_MS: 30000
+      LOG_LEVEL: info
+    volumes:
+      - api_reports:/app/data/reports
+      - api_composites:/app/data/composites
+    ports:
+      - "5001:5001"
+    networks:
+      - phantom-internal
+      - phantom-public
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/api/v1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+networks:
+  phantom-internal:
+    internal: true
+  phantom-public:
+    driver: bridge
+
+volumes:
+  mongo_data:
+  mongo_config:
+  api_reports:
+  api_composites:
+

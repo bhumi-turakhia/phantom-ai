@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Solid Dark Navy Badge Background for High-Contrast Browser Tabs -->
+  <rect width="64" height="64" rx="14" fill="#101B2D"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.25" stroke="#2A3B54" stroke-width="1.5"/>
+
+  <!-- Forensic Focus Brackets (Viewfinder Examination Corners) -->
+  <path d="M 8 18 L 8 8 L 18 8" stroke="#7893B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 46 8 L 56 8 L 56 18" stroke="#7893B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 8 46 L 8 56 L 18 56" stroke="#7893B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 46 56 L 56 56 L 56 46" stroke="#7893B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- AI Geometric Facial Mesh -->
+  <g stroke="#7893B3" stroke-width="1.1" stroke-opacity="0.6" stroke-linejoin="round">
+    <line x1="32" y1="14" x2="32" y2="23"/>
+    <line x1="23" y1="18" x2="32" y2="23"/>
+    <line x1="41" y1="18" x2="32" y2="23"/>
+    <line x1="18" y1="25" x2="25" y2="27"/>
+    <line x1="46" y1="25" x2="39" y2="27"/>
+    <line x1="25" y1="27" x2="32" y2="31"/>
+    <line x1="39" y1="27" x2="32" y2="31"/>
+    <line x1="32" y1="31" x2="32" y2="38"/>
+    <line x1="28" y1="37" x2="32" y2="38"/>
+    <line x1="36" y1="37" x2="32" y2="38"/>
+    <line x1="28" y1="37" x2="27" y2="43"/>
+    <line x1="36" y1="37" x2="37" y2="43"/>
+    <line x1="27" y1="43" x2="32" y2="46"/>
+    <line x1="37" y1="43" x2="32" y2="46"/>
+    <line x1="27" y1="43" x2="32" y2="52"/>
+    <line x1="37" y1="43" x2="32" y2="52"/>
+  </g>
+
+  <!-- Key Biometric Axis Highlight Lines -->
+  <line x1="25" y1="27" x2="39" y2="27" stroke="#27B3A3" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="32" y1="23" x2="32" y2="31" stroke="#27B3A3" stroke-width="1.4" stroke-linecap="round"/>
+
+  <!-- Cranial & Jawline Silhouette -->
+  <path d="M 32 14 L 23 18 L 18 25 L 20 34 L 24 45 L 32 52 L 40 45 L 44 34 L 46 25 L 41 18 Z"
+        stroke="#27B3A3" stroke-width="1.75" stroke-linejoin="round" fill="none"/>
+
+  <!-- Landmark Nodes -->
+  <g fill="#27B3A3">
+    <circle cx="32" cy="23" r="1.6"/>
+    <circle cx="25" cy="27" r="2.0"/>
+    <circle cx="39" cy="27" r="2.0"/>
+    <circle cx="20" cy="34" r="1.5"/>
+    <circle cx="44" cy="34" r="1.5"/>
+    <circle cx="32" cy="38" r="2.0"/>
+    <circle cx="27" cy="43" r="1.5"/>
+    <circle cx="37" cy="43" r="1.5"/>
+    <circle cx="32" cy="52" r="2.0"/>
+  </g>
+</svg>

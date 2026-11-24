@@ -1,0 +1,220 @@
+/* PHANTOM AI 3.0 — Phase 9.0 Global Styles (Option C: Hybrid Forensic Workspace + Stage 1.5 Animated Blueprint Grid) */
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+:root {
+  /* Core Option C Palette */
+  --midnight-navy: #101B2D;
+  --deep-slate: #18263A;
+  --forensic-teal: #27B3A3;
+  --steel-blue: #7893B3;
+  --evidence-amber: #D9A441;
+  --main-background: #F3F6FA;
+  --panel-white: #FFFFFF;
+  --primary-text: #18263A;
+
+  /* Stage 1.5 Forensic Blueprint Grid Variables */
+  --grid-cell-size: 32px;
+  --grid-major-size: 160px;
+  --grid-cycle-duration: 48s;
+  --grid-cycle-duration-auth: 42s;
+
+  /* Light Workspace Default Grid Colours (Derived from Steel Blue #7893B3 & Forensic Teal #27B3A3) */
+  --grid-fine-line: rgba(120, 147, 179, 0.095);
+  --grid-major-line: rgba(39, 179, 163, 0.08);
+  --grid-ambient-teal: rgba(39, 179, 163, 0.045);
+  --grid-ambient-steel: rgba(120, 147, 179, 0.045);
+}
+
+html,
+body {
+  background-color: var(--main-background);
+  color: var(--primary-text);
+  font-family: "Inter", "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================================
+ * STAGE 1.5 — ANIMATED FORENSIC BLUEPRINT GRID SYSTEM
+ * Seamless 32px minor / 160px major technical blueprint grid with continuous
+ * slow diagonal drift (42s–48s cycle) and strict prefers-reduced-motion support.
+ * ============================================================================ */
+
+@keyframes forensicGridDrift {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 160px 160px, 160px 160px, 160px 160px, 160px 160px;
+  }
+}
+
+/* Base reusable blueprint pattern */
+.forensic-grid-pattern {
+  background-image:
+    linear-gradient(to right, var(--grid-major-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-major-line) 1px, transparent 1px),
+    linear-gradient(to right, var(--grid-fine-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-fine-line) 1px, transparent 1px);
+  background-size:
+    var(--grid-major-size) var(--grid-major-size),
+    var(--grid-major-size) var(--grid-major-size),
+    var(--grid-cell-size) var(--grid-cell-size),
+    var(--grid-cell-size) var(--grid-cell-size);
+  background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+.forensic-grid-animated {
+  animation: forensicGridDrift var(--grid-cycle-duration) linear infinite;
+  will-change: background-position;
+}
+
+/* Page-Specific Variant 1: Dashboard Workspace (Standard Light Blueprint + Subtle Teal Illumination) */
+.forensic-grid-workspace {
+  --grid-fine-line: rgba(120, 147, 179, 0.095);
+  --grid-major-line: rgba(39, 179, 163, 0.08);
+  --grid-ambient-teal: rgba(39, 179, 163, 0.045);
+  --grid-ambient-steel: rgba(120, 147, 179, 0.045);
+  --grid-cycle-duration: 48s;
+}
+
+/* Page-Specific Variant 2: Cases, Reports, Evidence & Database (Restrained High-Readability Light Grid) */
+.forensic-grid-workspace-subtle {
+  --grid-fine-line: rgba(120, 147, 179, 0.07);
+  --grid-major-line: rgba(39, 179, 163, 0.055);
+  --grid-ambient-teal: rgba(39, 179, 163, 0.03);
+  --grid-ambient-steel: rgba(120, 147, 179, 0.035);
+  --grid-cycle-duration: 54s;
+}
+
+/* Page-Specific Variant 3: Composite Synthesis Studio (Precision Technical Grid, Never Overlays Face Images) */
+.forensic-grid-studio {
+  --grid-fine-line: rgba(120, 147, 179, 0.08);
+  --grid-major-line: rgba(39, 179, 163, 0.068);
+  --grid-ambient-teal: rgba(39, 179, 163, 0.035);
+  --grid-ambient-steel: rgba(120, 147, 179, 0.04);
+  --grid-cycle-duration: 50s;
+}
+
+/* Page-Specific Variant 4: Login & Registration Entrance (Slightly More Visible Animated Grid) */
+.forensic-grid-auth {
+  --grid-fine-line: rgba(120, 147, 179, 0.135);
+  --grid-major-line: rgba(39, 179, 163, 0.115);
+  --grid-ambient-teal: rgba(39, 179, 163, 0.07);
+  --grid-ambient-steel: rgba(120, 147, 179, 0.065);
+  --grid-cycle-duration: 42s;
+}
+
+/* Page-Specific Variant 5: Midnight Navy Sidebar (#101B2D) Static Steel-Blue Grid */
+.forensic-grid-sidebar-static {
+  --grid-fine-line: rgba(120, 147, 179, 0.065);
+  --grid-major-line: rgba(39, 179, 163, 0.05);
+  --grid-ambient-teal: rgba(39, 179, 163, 0.04);
+  --grid-ambient-steel: rgba(120, 147, 179, 0.03);
+}
+
+/* Direct utility classes for backward compatibility */
+.bg-forensic-grid {
+  background-color: #F3F6FA;
+  background-image:
+    linear-gradient(to right, rgba(39, 179, 163, 0.075) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(39, 179, 163, 0.075) 1px, transparent 1px),
+    linear-gradient(to right, rgba(120, 147, 179, 0.085) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 147, 179, 0.085) 1px, transparent 1px);
+  background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
+  animation: forensicGridDrift 48s linear infinite;
+}
+
+.bg-forensic-grid-lg {
+  background-image:
+    linear-gradient(to right, rgba(39, 179, 163, 0.11) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(39, 179, 163, 0.11) 1px, transparent 1px),
+    linear-gradient(to right, rgba(120, 147, 179, 0.13) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 147, 179, 0.13) 1px, transparent 1px);
+  background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
+  animation: forensicGridDrift 42s linear infinite;
+}
+
+/* Restrained radial focus vignette */
+.bg-vignette {
+  background:
+    radial-gradient(circle at 20% 15%, var(--grid-ambient-teal), transparent 55%),
+    radial-gradient(circle at 82% 80%, var(--grid-ambient-steel), transparent 60%);
+}
+
+/* Strict Reduced Motion Compliance: Freeze all background grid movement when requested */
+@media (prefers-reduced-motion: reduce) {
+  .forensic-grid-animated,
+  .bg-forensic-grid,
+  .bg-forensic-grid-lg,
+  .scan-overlay::after {
+    animation: none !important;
+    background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px !important;
+    transform: none !important;
+  }
+}
+
+/* Hairline section divider with a Forensic Teal precision tick */
+.divider-tick {
+  position: relative;
+  border-top: 1px solid #DCE4EE;
+}
+.divider-tick::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #27B3A3;
+}
+
+/* Scanline overlay container — used during composite generation */
+.scan-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.scan-overlay::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(39, 179, 163, 0.14),
+    transparent
+  );
+  animation: scanLine 2.2s linear infinite;
+}
+
+@keyframes scanLine {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(350%);
+  }
+}
+
+/* Monospace technical label utility (JetBrains Mono) */
+.label-technical {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Clean professional scrollbars matching Slate/Steel palette */
+* {
+  scrollbar-color: #C1CFDF #F3F6FA;
+  scrollbar-width: thin;
+}

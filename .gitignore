@@ -1,0 +1,128 @@
+# ==============================================================================
+# PHANTOM AI PRODUCTION GITIGNORE
+# ==============================================================================
+
+# --- Operating System & Editor Metadata ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.code-workspace
+.pytest_cache/
+.coverage
+htmlcov/
+.nyc_output/
+
+# --- Environment Configurations & Secrets (NEVER COMMIT) ---
+.env
+.env.*
+.env.local
+.env.*.local
+!.env.example
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+
+# --- Node / JavaScript / TypeScript Dependencies & Builds ---
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+*.tsbuildinfo
+*-backup/
+phantom-ai-client-backup/
+
+# --- Python / PyTorch / Machine Learning Virtual Envs & Cache ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- Machine Learning Checkpoints & Weights (>50MB / Binary Blobs) ---
+*.pt
+*.pth
+*.pwf
+*.bin
+*.onnx
+*.safetensors
+*.ckpt
+checkpoints/
+**/checkpoints/
+runs/
+wandb/
+
+# --- Datasets & Raw Image Archives (CelebA Licensing & Large Data) ---
+datasets/
+**/datasets/
+*.h5
+*.hdf5
+*.tar
+*.tar.gz
+*.zip
+*.7z
+
+# --- Investigative Casework & Private Case Storage ---
+phantom-ai-api/data/reports/*.pdf
+phantom-ai-api/data/composites/*.png
+!phantom-ai-api/data/reports/.gitkeep
+!phantom-ai-api/data/composites/.gitkeep
+
+# --- Ephemeral Validation Grids, Ad-Hoc Tests & Root Images ---
+candidate_eval_samples/
+native_eval_samples/
+native_live_samples/
+verification_hd_samples/
+verification_samples/
+visual_comparisons_upgrade/
+*.png
+!phantom-ai-client/public/*.png
+!docs/**/*.png
+test-output.jpg
+test-hf*.ts
+test-hf*.js
+*.backup.*
+*.bak
+*.old
+
+# --- Internal Research Phase Audit Reports (Root directory cleanup) ---
+PHASE_*.md
+PHANTOM_AI_*_REPORT.md
+PHANTOM_AI_*_AUDIT.md
+
+# --- Application Logs ---
+logs/
+*.log

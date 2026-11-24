@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Forensic Focus Brackets (Viewfinder Examination Corners) -->
+  <path d="M 4 15 L 4 4 L 15 4" stroke="#7893B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 49 4 L 60 4 L 60 15" stroke="#7893B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 4 49 L 4 60 L 15 60" stroke="#7893B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 49 60 L 60 60 L 60 49" stroke="#7893B3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Corner Precision Ticks -->
+  <circle cx="4" cy="4" r="1.2" fill="#27B3A3"/>
+  <circle cx="60" cy="4" r="1.2" fill="#27B3A3"/>
+  <circle cx="4" cy="60" r="1.2" fill="#27B3A3"/>
+  <circle cx="60" cy="60" r="1.2" fill="#27B3A3"/>
+
+  <!-- AI Geometric Facial Mesh (Subtle Steel Blue Connections) -->
+  <g stroke="#7893B3" stroke-width="1" stroke-opacity="0.65" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Forehead Triangulation -->
+    <line x1="32" y1="12" x2="32" y2="22"/>
+    <line x1="22" y1="16" x2="32" y2="22"/>
+    <line x1="42" y1="16" x2="32" y2="22"/>
+    <line x1="16" y1="24" x2="24" y2="26"/>
+    <line x1="24" y1="26" x2="32" y2="22"/>
+    <line x1="48" y1="24" x2="40" y2="26"/>
+    <line x1="40" y1="26" x2="32" y2="22"/>
+    <line x1="22" y1="16" x2="16" y2="24"/>
+    <line x1="42" y1="16" x2="48" y2="24"/>
+
+    <!-- Orbital & Zygomatic Lines -->
+    <line x1="24" y1="26" x2="32" y2="30"/>
+    <line x1="40" y1="26" x2="32" y2="30"/>
+    <line x1="16" y1="24" x2="18" y2="34"/>
+    <line x1="18" y1="34" x2="24" y2="26"/>
+    <line x1="48" y1="24" x2="46" y2="34"/>
+    <line x1="46" y1="34" x2="40" y2="26"/>
+
+    <!-- Nasal Geometry -->
+    <line x1="24" y1="26" x2="27" y2="37"/>
+    <line x1="40" y1="26" x2="37" y2="37"/>
+    <line x1="32" y1="30" x2="32" y2="38"/>
+    <line x1="27" y1="37" x2="32" y2="38"/>
+    <line x1="37" y1="37" x2="32" y2="38"/>
+    <line x1="18" y1="34" x2="27" y2="37"/>
+    <line x1="46" y1="34" x2="37" y2="37"/>
+
+    <!-- Mandibular & Oral Mesh -->
+    <line x1="32" y1="38" x2="32" y2="43"/>
+    <line x1="27" y1="37" x2="26" y2="44"/>
+    <line x1="37" y1="37" x2="38" y2="44"/>
+    <line x1="26" y1="44" x2="32" y2="43"/>
+    <line x1="38" y1="44" x2="32" y2="43"/>
+    <line x1="26" y1="44" x2="32" y2="47"/>
+    <line x1="38" y1="44" x2="32" y2="47"/>
+    <line x1="18" y1="34" x2="22" y2="46"/>
+    <line x1="22" y1="46" x2="26" y2="44"/>
+    <line x1="46" y1="34" x2="42" y2="46"/>
+    <line x1="42" y1="46" x2="38" y2="44"/>
+    <line x1="26" y1="44" x2="32" y2="54"/>
+    <line x1="38" y1="44" x2="32" y2="54"/>
+    <line x1="32" y1="47" x2="32" y2="54"/>
+    <line x1="22" y1="46" x2="32" y2="54"/>
+    <line x1="42" y1="46" x2="32" y2="54"/>
+  </g>
+
+  <!-- Key Biometric Axis Highlight Lines (Forensic Teal) -->
+  <g stroke="#27B3A3" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Horizontal Eye Axis -->
+    <line x1="24" y1="26" x2="40" y2="26"/>
+    <!-- Nasal Apex to Subnasale -->
+    <line x1="32" y1="22" x2="32" y2="30"/>
+    <!-- Cheeks to Mouth Apex -->
+    <path d="M 27 37 L 32 38 L 37 37" fill="none"/>
+    <path d="M 26 44 L 32 43 L 38 44" fill="none"/>
+  </g>
+
+  <!-- Human Cranial / Jawline Reconstruction Silhouette -->
+  <path d="M 32 12 L 22 16 L 16 24 L 18 34 L 22 46 L 32 54 L 42 46 L 46 34 L 48 24 L 42 16 Z"
+        stroke="#27B3A3" stroke-width="1.6" stroke-linejoin="round" fill="none"/>
+
+  <!-- Forensic Evidence Landmark Nodes (Teal Precision Circles) -->
+  <g fill="#27B3A3">
+    <!-- Glabella (Forehead Center) -->
+    <circle cx="32" cy="22" r="1.6"/>
+    <!-- Left & Right Eye Orbits -->
+    <circle cx="24" cy="26" r="1.9"/>
+    <circle cx="40" cy="26" r="1.9"/>
+    <!-- Cheekbones / Zygomatic Arches -->
+    <circle cx="18" cy="34" r="1.5"/>
+    <circle cx="46" cy="34" r="1.5"/>
+    <!-- Nose Tip / Subnasale -->
+    <circle cx="32" cy="38" r="1.9"/>
+    <!-- Mouth Corners -->
+    <circle cx="26" cy="44" r="1.4"/>
+    <circle cx="38" cy="44" r="1.4"/>
+    <!-- Chin Apex / Menton -->
+    <circle cx="32" cy="54" r="1.8"/>
+  </g>
+</svg>
+
