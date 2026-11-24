@@ -1,4 +1,4 @@
-# Phantom AI 3.0: Neural-Forensic Facial Composite System
+# Phantom AI: Neural-Forensic Facial Composite System
 
 > **Research Prototype & Technical Specification**  
 > *A transparent, explainable, and ethically constrained deep-learning framework for witness-guided forensic facial composite generation.*
